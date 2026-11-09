@@ -1,0 +1,398 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Our Menu | Aurelia - The Art of Dining</title>
+
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@500;600;700&family=Poppins:wght@300;400;500;600;700&display=swap"
+        rel="stylesheet">
+
+    <!-- Icons -->
+    <link rel="stylesheet"
+        href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css">
+
+    <!-- Existing homepage stylesheet -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- New menu stylesheet -->
+    <link rel="stylesheet" href="css/menu.css">
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <header class="menu-header">
+
+        <a href="index.html" class="menu-logo">
+            AURELIA
+            <span>THE ART OF DINING</span>
+        </a>
+
+        <nav class="menu-navigation">
+            <a href="index.html">Home</a>
+            <a href="menu.html" class="active">Menu</a>
+            <a href="index.html#story">Our Story</a>
+            <a href="index.html#contact">Contact</a>
+        </nav>
+
+        <div class="header-actions">
+
+            <button id="themeToggle" aria-label="Toggle theme">
+                <i class="fas fa-moon"></i>
+            </button>
+
+            <button id="cartButton" class="cart-button">
+                <i class="fas fa-shopping-bag"></i>
+                <span id="cartCount">0</span>
+            </button>
+
+        </div>
+
+    </header>
+
+
+    <!-- MENU HERO -->
+    <section class="menu-hero">
+
+        <div class="menu-hero-content">
+
+            <p class="eyebrow">DISCOVER OUR CULINARY WORLD</p>
+
+            <h1>Our Exquisite <span>Menu</span></h1>
+
+            <p>
+                From traditional Indian delicacies to international favourites,
+                explore a world of flavours prepared with passion.
+            </p>
+
+            <a href="#foodMenu" class="gold-button">
+                Explore Our Menu
+            </a>
+
+        </div>
+
+    </section>
+
+
+    <!-- TODAY'S SPECIAL -->
+    <section class="today-special">
+
+        <div class="special-text">
+            <span class="eyebrow">HANDPICKED FOR YOU</span>
+
+            <h2>Today's Special</h2>
+
+            <p>
+                Discover our chef's specially selected dishes
+                and enjoy an unforgettable dining experience.
+            </p>
+
+        </div>
+
+        <div id="todaySpecialCard" class="today-special-card">
+            Loading today's special...
+        </div>
+
+    </section>
+
+
+    <!-- SPECIAL COLLECTIONS -->
+    <section class="collections-section">
+
+        <div class="section-heading">
+            <p class="eyebrow">CURATED WITH PASSION</p>
+            <h2>Explore Our Collections</h2>
+        </div>
+
+        <div class="collection-grid">
+
+            <button class="collection-card" data-collection="chef">
+                <i class="fas fa-hat-chef"></i>
+                <h3>Chef's Special</h3>
+                <p>Exclusive creations from our kitchen.</p>
+            </button>
+
+            <button class="collection-card" data-collection="favourite">
+                <i class="fas fa-heart"></i>
+                <h3>Customer Favourites</h3>
+                <p>Most loved dishes by our customers.</p>
+            </button>
+
+            <button class="collection-card" data-collection="budget">
+                <i class="fas fa-wallet"></i>
+                <h3>Budget-Friendly</h3>
+                <p>Delicious meals at friendly prices.</p>
+            </button>
+
+            <button class="collection-card" data-collection="family">
+                <i class="fas fa-users"></i>
+                <h3>Family Combos</h3>
+                <p>Perfect choices for sharing.</p>
+            </button>
+
+            <button class="collection-card" data-collection="weekend">
+                <i class="fas fa-calendar"></i>
+                <h3>Weekend Specials</h3>
+                <p>Make your weekends memorable.</p>
+            </button>
+
+            <button class="collection-card" data-collection="seasonal">
+                <i class="fas fa-leaf"></i>
+                <h3>Seasonal Specials</h3>
+                <p>Fresh seasonal favourites.</p>
+            </button>
+
+            <button class="collection-card" data-collection="festival">
+                <i class="fas fa-star"></i>
+                <h3>Festival Specials</h3>
+                <p>Celebrate with special flavours.</p>
+            </button>
+
+        </div>
+
+    </section>
+
+
+    <!-- FOOD MENU -->
+    <section class="food-menu-section" id="foodMenu">
+
+        <div class="section-heading">
+            <p class="eyebrow">TASTE THE DIFFERENCE</p>
+            <h2>Explore Our Food Menu</h2>
+            <p>Find your next favourite dish.</p>
+        </div>
+
+
+        <!-- SEARCH -->
+        <div class="menu-search">
+
+            <i class="fas fa-search"></i>
+
+            <input type="text"
+                id="searchInput"
+                placeholder="Search for your favourite dish...">
+
+        </div>
+
+
+        <!-- FILTERS -->
+        <div class="filter-panel">
+
+            <div class="filter-item">
+
+                <label for="categoryFilter">Category</label>
+
+                <select id="categoryFilter">
+                    <option value="all">All Categories</option>
+                    <option value="Indian">Indian Cuisine</option>
+                    <option value="International">International Cuisine</option>
+                    <option value="Starters">Starters</option>
+                    <option value="Snacks">Snacks</option>
+                    <option value="Juices">Fresh Juices</option>
+                    <option value="Beverages">Milkshakes & Beverages</option>
+                    <option value="Desserts">Desserts & Ice Cream</option>
+                </select>
+
+            </div>
+
+
+            <div class="filter-item">
+
+                <label for="cuisineFilter">Cuisine</label>
+
+                <select id="cuisineFilter">
+                    <option value="all">All Cuisines</option>
+                    <option value="South Indian">South Indian</option>
+                    <option value="North Indian">North Indian</option>
+                    <option value="Italian">Italian</option>
+                    <option value="Chinese">Chinese</option>
+                    <option value="Mexican">Mexican</option>
+                    <option value="Continental">Continental</option>
+                </select>
+
+            </div>
+
+
+            <div class="filter-item">
+
+                <label for="dietFilter">Food Type</label>
+
+                <select id="dietFilter">
+                    <option value="all">All Food Types</option>
+                    <option value="Veg">Vegetarian</option>
+                    <option value="Non-Veg">Non-Vegetarian</option>
+                </select>
+
+            </div>
+
+
+            <div class="filter-item">
+
+                <label for="priceFilter">Price Range</label>
+
+                <select id="priceFilter">
+                    <option value="all">All Prices</option>
+                    <option value="0-150">Below ₹150</option>
+                    <option value="150-300">₹150 - ₹300</option>
+                    <option value="300-500">₹300 - ₹500</option>
+                    <option value="500-10000">Above ₹500</option>
+                </select>
+
+            </div>
+
+
+            <div class="filter-item">
+
+                <label for="sortFilter">Sort By</label>
+
+                <select id="sortFilter">
+                    <option value="default">Recommended</option>
+                    <option value="low">Price: Low to High</option>
+                    <option value="high">Price: High to Low</option>
+                </select>
+
+            </div>
+
+        </div>
+
+
+        <!-- QUICK FILTERS -->
+        <div class="quick-filters">
+
+            <button class="quick-filter active" data-filter="all">
+                All Dishes
+            </button>
+
+            <button class="quick-filter" data-filter="popular">
+                <i class="fas fa-fire"></i> Popular
+            </button>
+
+            <button class="quick-filter" data-filter="chef">
+                <i class="fas fa-star"></i> Chef Recommended
+            </button>
+
+            <button class="quick-filter" data-filter="available">
+                Available
+            </button>
+
+            <button class="quick-filter" data-filter="unavailable">
+                Unavailable
+            </button>
+
+        </div>
+
+
+        <!-- FOOD CATEGORY NAVIGATION -->
+        <div class="category-navigation">
+
+            <a href="#indian">Indian</a>
+            <a href="#international">International</a>
+            <a href="#starters">Starters</a>
+            <a href="#snacks">Snacks</a>
+            <a href="#juices">Fresh Juices</a>
+            <a href="#beverages">Beverages</a>
+            <a href="#desserts">Desserts</a>
+
+        </div>
+
+
+        <!-- FOOD CARDS ARE GENERATED USING JAVASCRIPT -->
+        <div id="foodGrid" class="food-grid"></div>
+
+        <p id="noResults" class="no-results" hidden>
+            No dishes found. Try changing your search or filters.
+        </p>
+
+    </section>
+
+
+    <!-- CART SIDEBAR -->
+    <div class="cart-overlay" id="cartOverlay"></div>
+
+    <aside class="cart-sidebar" id="cartSidebar">
+
+        <div class="cart-heading">
+
+            <h2>Your Cart</h2>
+
+            <button id="closeCart" aria-label="Close cart">
+                <i class="fas fa-times"></i>
+            </button>
+
+        </div>
+
+        <div id="cartItems" class="cart-items">
+            Your cart is empty.
+        </div>
+
+        <div class="cart-footer">
+
+            <h3>
+                Total:
+                <span id="cartTotal">₹0</span>
+            </h3>
+
+            <button id="checkoutButton" class="gold-button">
+                Continue to Order
+            </button>
+
+            <p class="cart-note">
+                Demo cart only. Online ordering and payment
+                will be added in a later project stage.
+            </p>
+
+        </div>
+
+    </aside>
+
+
+    <!-- FOOD DETAILS MODAL -->
+    <div class="modal-overlay" id="foodModal">
+
+        <div class="food-modal">
+
+            <button id="closeFoodModal" class="modal-close"
+                aria-label="Close details">
+                &times;
+            </button>
+
+            <div id="foodModalContent"></div>
+
+        </div>
+
+    </div>
+
+
+    <!-- FOOTER -->
+    <footer class="menu-footer">
+
+        <h2>AURELIA</h2>
+
+        <p>THE ART OF DINING</p>
+
+        <p>
+            A World of Flavours, One Table.
+        </p>
+
+        <a href="index.html">Back to Home</a>
+
+        <p class="copyright">
+            © 2026 Aurelia. All Rights Reserved.
+        </p>
+
+    </footer>
+
+
+    <!-- MENU JAVASCRIPT -->
+    <script src="js/menu.js"></script>
+
+</body>
+
+</html>
