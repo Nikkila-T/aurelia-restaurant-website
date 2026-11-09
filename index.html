@@ -4,26 +4,55 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>AURELIA | The Art of Dining</title>
-
-  <!-- Google Fonts -->
   <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@700&family=Poppins:wght@300;400;600&display=swap" rel="stylesheet">
-
-  <!-- CSS Link -->
   <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
 
-    <nav style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; width:100%;">
+  <nav style="display:flex; flex-direction:column; align-items:center; justify-content:center; text-align:center; width:100%;">
     <h1 class="logo" style="text-align:center; font-weight:900; font-size:55px; letter-spacing:6px; width:100%; margin:0; padding:15px 0;">AURELIA</h1>
     <div class="nav-links" style="display:flex; justify-content:center; gap:20px; width:100%;">
-    <div class="nav-links">
       <a href="#">Home</a>
-      <a href="#">Menu</a>
+      <a href="menu.html">Menu</a>
       <a href="#">About</a>
       <a href="#">Contact</a>
       <button onclick="bookTable()">Book a Table</button>
     </div>
   </nav>
+
+  <!-- ===== SLIDER - CLICK ONLY, NO AUTO ===== -->
+  <div class="slider">
+    <div class="slides" id="slides">
+      <div class="slide" style="background-image: url('images/aurelia-calm.jpeg')">
+        <h2>55 YEARS OF TRADITION</h2>
+        <p>AURELIA - The Art of Dining</p>
+        <button>Book a Table</button>
+      </div>
+      <div class="slide" style="background-image: url('images/food2.jpeg')">
+        <h2>FRESH & DELICIOUS</h2>
+        <p>Paneer Tikka Pizza - ₹349</p>
+        <button>Explore Menu</button>
+      </div>
+      <div class="slide" style="background-image: url('images/food3.jpeg')">
+        <h2>PREMIUM AMBIENCE</h2>
+        <p>Best in Coimbatore</p>
+        <button>Visit Us</button>
+      </div>
+      <div class="slide" style="background-image: url('images/food4.jpeg')">
+        <h2>SWEETS & BAKES</h2>
+        <p>Chocolate Brownie - ₹150</p>
+        <button>Order Now</button>
+      </div>
+    </div>
+    <div class="dots">
+      <span class="dot active" data-slide="0"></span>
+      <span class="dot" data-slide="1"></span>
+      <span class="dot" data-slide="2"></span>
+      <span class="dot" data-slide="3"></span>
+    </div>
+    <button class="prev" id="prevBtn">❮</button>
+    <button class="next" id="nextBtn">❯</button>
+  </div>
 
   <section class="hero">
     <h2>Welcome to AURELIA</h2>
@@ -95,5 +124,25 @@
   <footer><p>© 2026 AURELIA - Coimbatore</p></footer>
 
   <script src="js/script.js"></script>
+  <script>
+    // SLIDER - CLICK ONLY - NO AUTO SWIPE
+    let currentSlide = 0;
+    const slidesBox = document.getElementById('slides');
+    const allDots = document.querySelectorAll('.dot');
+    function showMySlide(n) {
+      currentSlide = (n + 4) % 4;
+      slidesBox.style.transform = "translateX(-" + (currentSlide * 100) + "%)";
+      allDots.forEach((d, i) => {
+        if (i === currentSlide) d.classList.add('active');
+        else d.classList.remove('active');
+      });
+    }
+    document.getElementById('nextBtn').addEventListener('click', function() { showMySlide(currentSlide + 1); });
+    document.getElementById('prevBtn').addEventListener('click', function() { showMySlide(currentSlide - 1); });
+    allDots.forEach((d) => {
+      d.addEventListener('click', function() { showMySlide(Number(d.getAttribute('data-slide'))); });
+    });
+    function bookTable(){ alert("Book a Table - Coming Soon!"); }
+  </script>
 </body>
 </html>
